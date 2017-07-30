@@ -14,7 +14,7 @@ from utils.helper import *
 # 设置logging
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
-main_log_handler = logging.FileHandler("log/triangle_main_{0}.log".format(int(time.time())), mode="w")
+main_log_handler = logging.FileHandler("log/triangle_main_{0}.log".format(int(time.time())), mode="w", encoding="utf-8")
 main_log_handler.setLevel(logging.DEBUG)
 formatter = logging.Formatter("%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s: %(message)s")
 main_log_handler.setFormatter(formatter)

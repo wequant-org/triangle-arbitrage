@@ -22,6 +22,7 @@ BROKER_URL = "http://api.huobi.pro"
 def http_get_request(url, params, add_to_headers=None):
     headers = {
         "Content-type": "application/x-www-form-urlencoded",
+        'User-agent': 'Mozilla 5.10'
     }
     if add_to_headers:
         headers.update(add_to_headers)
@@ -37,7 +38,8 @@ def http_get_request(url, params, add_to_headers=None):
 def http_post_request(url, params, add_to_headers=None):
     headers = {
         "Accept": "application/json",
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'User-agent': 'Mozilla 5.10'
     }
     if add_to_headers:
         headers.update(add_to_headers)
