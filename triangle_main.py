@@ -79,18 +79,21 @@ class Triangle:
             # 初始化为火币市场
             huobi_market = marketHelper.Market()
             self.market_price_tick = dict()
+            
             self.market_price_tick["{0}_{1}".format(self.base_cur, self.quote_cur)] = \
                 huobi_market.market_detail(self.base_cur, self.quote_cur)
             market_price_sell_1 = \
                 self.market_price_tick["{0}_{1}".format(self.base_cur, self.quote_cur)].get("asks")[0][0]
             market_price_buy_1 = \
                 self.market_price_tick["{0}_{1}".format(self.base_cur, self.quote_cur)].get("bids")[0][0]
+            
             self.market_price_tick["{0}_{1}".format(self.base_cur, self.mid_cur)] = \
                 huobi_market.market_detail(self.base_cur, self.mid_cur)
             base_mid_price_buy_1 = \
                 self.market_price_tick["{0}_{1}".format(self.base_cur, self.mid_cur)].get("bids")[0][0]
             base_mid_price_sell_1 = \
                 self.market_price_tick["{0}_{1}".format(self.base_cur, self.mid_cur)].get("asks")[0][0]
+            
             self.market_price_tick["{0}_{1}".format(self.quote_cur, self.mid_cur)] = \
                 huobi_market.market_detail(self.quote_cur, self.mid_cur)
             quote_mid_price_sell_1 = \
